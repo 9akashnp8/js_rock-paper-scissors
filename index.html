@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function computerPlay() {
+            let myArray = ['Rock', 'Paper', 'Scissor']
+            return myArray[~~(Math.random() * myArray.length)];
+        }
+
+        function playRound(playerSelection, computerSelection) {
+
+            if (playerSelection == "Rock" && computerSelection == "Scissor") {
+                return playerScore++;
+            }
+            else if (playerSelection == "Rock" && computerSelection == "Paper") {
+                return computerScore++;
+            }
+            else if (playerSelection == "Paper" && computerSelection == "Rock") {
+                return playerScore++;
+            }
+            else if (playerSelection == "Paper" && computerSelection == "Scissor") {
+                return computerScore++;
+            }
+            else if (playerSelection == "Scissor" && computerSelection == "Rock") {
+                return computerScore++;
+            }
+            else if (playerSelection == "Scissor" && computerSelection == "Paper") {
+                return playerScore++;
+            }
+            else {
+                return 0;
+            }
+        }
+
+        function game() {
+            for (let i=0; i < 5; i++) {
+                playerSelection = prompt("Play")
+                playRound(playerSelection, computerSelection);
+                console.log(playerScore)
+                console.log(computerScore)
+            }
+        }
+
+        let playerSelection = ""
+        const computerSelection = computerPlay();
+        let playerScore = 0;
+        let computerScore = 0;
+        game();
+    </script>
+</body>
+</html>
